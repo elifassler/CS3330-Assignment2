@@ -1,3 +1,5 @@
+package Proj;
+
 public class Student {
 	
 
@@ -6,7 +8,7 @@ public class Student {
 
 	public Student(String name) {
 		
-		if (name == null || name == ""){
+		if (name == null || name.isBlank()){
 			throw new IllegalArgumentException("Name isnt valid");
 		}
 		
@@ -16,13 +18,24 @@ public class Student {
 		this.points = 0; 
 		
 	}  // add points 
+	
 	public void addPoints(int amount) { 
 		
-		if(amount < 0 ) {
-			throw new IllegalArgumentException("Amount must be positive");
+		if(amount <= 0 ) {
+			throw new IllegalArgumentException("Amount must be positive and not zero");
 		}
 		
 		this.points = points + amount;
 	}
+	
+	public int getPoints()
+	{
+		return points;
+	}
 
+	public String getName()
+	{
+		return name;
+	}
+	
 }
