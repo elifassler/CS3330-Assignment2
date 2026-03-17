@@ -1,5 +1,3 @@
-package Proj;
-
 public class Student {
 	
 
