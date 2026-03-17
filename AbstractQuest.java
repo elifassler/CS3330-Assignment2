@@ -2,7 +2,7 @@ abstract class AbstractQuest implements Quest {
 	
 	private int id;
 	private String title;
-	private double basePoints;
+	private int basePoints;
 	private boolean completed;
 	
 	public AbstractQuest(int id, String title, int basePoints) {
@@ -27,7 +27,7 @@ abstract class AbstractQuest implements Quest {
 		return id;
 	}
 	
-	public String getgetTitle() {
+	public String getTitle() {
 		return title;
 	}
 	
