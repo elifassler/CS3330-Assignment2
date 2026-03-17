@@ -21,4 +21,29 @@ abstract class AbstractQuest implements Quest {
 		this.basePoints = basePoints;
 		this.completed = false;
 	}
+
+	// Getters
+	public int getId() {
+		return id;
+	}
+	
+	public String getgetTitle() {
+		return title;
+	}
+	
+	public int getBasePoints() {
+		return basePoints;
+	}
+	
+	public boolean isCompleted() {
+		return completed;
+	}
+	
+	// toString
+	@Override
+	public String toString() {
+		System.out.println("ID: " + id + "\nTitle: " + title + "\nBase points: " + basePoints + "\nCompletion status: " + completed);
+		
+		return "";
+	}
 }
