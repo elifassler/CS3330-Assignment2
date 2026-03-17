@@ -38,6 +38,8 @@ abstract class AbstractQuest implements Quest {
 	public boolean isCompleted() {
 		return completed;
 	}
+
+	public abstract int completeFor(Student s);
 	
 	// toString
 	@Override
