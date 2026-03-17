@@ -5,7 +5,7 @@ abstract class AbstractQuest implements Quest {
 	private double basePoints;
 	private boolean completed;
 	
-	public AbstractQuest(int id, String title, double basePoints) {
+	public AbstractQuest(int id, String title, int basePoints) {
 		if (id <= 0) {
 			throw new IllegalArgumentException("id has to be > 0");
 		}
@@ -39,6 +39,10 @@ abstract class AbstractQuest implements Quest {
 		return completed;
 	}
 
+	public void markCompleted() {
+		completed = true;
+	}
+	
 	public abstract int completeFor(Student s);
 	
 	// toString
