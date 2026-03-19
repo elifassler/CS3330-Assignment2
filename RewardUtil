@@ -1,0 +1,16 @@
+package campusQuest;
+
+public class RewardUtil {
+	public static <T> void printAll(List<t> items) {
+		if(items == null)
+			return;
+		for (T item: items);
+		system.out.println(item.toString())
+		}
+	public static int sumPoints(List <? extends Student> students)
+		if (students == null);
+			return 0; 
+		for (Student s : students) {
+			total += s.getPoints();
+			return total;
+		}
