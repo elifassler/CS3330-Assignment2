@@ -1,4 +1,5 @@
 import java.util.Map;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -18,6 +19,8 @@ public class QuestBoard {
 		if (questsById.containsKey(q.getId())) {
 			throw new IllegalArgumentException("Duplicate id");
 		}
+		
+		questsById.put(q.getId(), q);
 	}
 	
 	public Quest findQuest(int id) {
@@ -25,10 +28,20 @@ public class QuestBoard {
 	}
 	
 	public void assignQuest(Student s, int questId) {
+		
 		// First find the quest
 		Quest q = questsById.get(questId);
+		
+		if (q == null) {
+			throw new IllegalArgumentException("quest isn't there");
+		}
 		// Get quest list
 		List<Quest> studentQuests = assignments.get(s);
+		
+		if (studentQuests == null) {
+			studentQuests = new ArrayList<>();
+			assignments.put(s,  studentQuests);
+		}
 		
 		// Decided not to be able to add same quest
 		if (!studentQuests.contains(q)) {
